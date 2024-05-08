@@ -2,11 +2,13 @@
 PSQL="psql -X --username=freecodecamp --dbname=number_guess --tuples-only -c"
 
 #READ THE USERNAME
-
+echo "Enter your username:"
+read USERNAME
+#echo $USERNAME
 
 #SEARCH FOR THE USER IN DATABASE
-
-
+USER_FROM_DB=$($PSQL "SELECT username FROM users WHERE username='$USERNAME'")
+echo $USER_FROM_DB
 #IF NOT EXIST
 
 
