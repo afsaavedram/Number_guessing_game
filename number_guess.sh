@@ -1,2 +1,2 @@
 #!/bin/bash
-PSQL="psql -X --username=freecodecamp --dbname=periodic_table --tuples-only -c"
+PSQL="psql -X --username=freecodecamp --dbname=number_guess --tuples-only -c"
