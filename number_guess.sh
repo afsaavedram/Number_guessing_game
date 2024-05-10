@@ -77,7 +77,10 @@ done
 
 #PRINT THE CONGRATULATIONS MESSAGE
 #NUMBER_OF_GUESSES=$($PSQL "SELECT COUNT(guesses) FROM games INNER JOIN users USING(user_id)  WHERE user_id=$USER_ID")
+
 INSERTING_GUESSES=$($PSQL "INSERT INTO games(user_id, guesses) VALUES($USER_ID, $TRIES)")
+#BEST_GAME=$($PSQL "SELECT MIN(guesses) FROM games INNER JOIN users USING(user_id) WHERE user_id =$USER_ID")
+
 echo "You guessed it in $TRIES tries. The secret number was $RANDOM_NUMBER. Nice job!"
 
 
