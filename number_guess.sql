@@ -130,42 +130,38 @@ ALTER TABLE ONLY public.users ALTER COLUMN user_id SET DEFAULT nextval('public.u
 -- Data for Name: games; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
-INSERT INTO public.games VALUES (1, 1, 5);
-INSERT INTO public.games VALUES (2, 1, 12);
-INSERT INTO public.games VALUES (3, 1, 70);
-INSERT INTO public.games VALUES (4, 1, 22);
-INSERT INTO public.games VALUES (5, 1, 8);
-INSERT INTO public.games VALUES (6, 2, 4);
-INSERT INTO public.games VALUES (7, 2, 15);
-INSERT INTO public.games VALUES (8, 2, 50);
-INSERT INTO public.games VALUES (9, 1, 8);
+INSERT INTO public.games VALUES (10, 45, 6);
+INSERT INTO public.games VALUES (11, 45, 3);
+INSERT INTO public.games VALUES (12, 46, 642);
+INSERT INTO public.games VALUES (13, 46, 439);
+INSERT INTO public.games VALUES (14, 47, 200);
+INSERT INTO public.games VALUES (15, 47, 412);
+INSERT INTO public.games VALUES (16, 46, 481);
+INSERT INTO public.games VALUES (17, 46, 95);
+INSERT INTO public.games VALUES (18, 46, 197);
 
 
 --
 -- Data for Name: users; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
-INSERT INTO public.users VALUES (1, 'Andres');
-INSERT INTO public.users VALUES (2, 'Natalia');
-INSERT INTO public.users VALUES (3, 'user_1715193127278');
-INSERT INTO public.users VALUES (4, 'user_1715193127277');
-INSERT INTO public.users VALUES (5, 'ANdres');
-INSERT INTO public.users VALUES (6, 'user_1715200049777');
-INSERT INTO public.users VALUES (7, 'user_1715200049776');
+INSERT INTO public.users VALUES (45, 'andres');
+INSERT INTO public.users VALUES (46, 'user_1715353746457');
+INSERT INTO public.users VALUES (47, 'user_1715353746456');
 
 
 --
 -- Name: games_game_id_seq; Type: SEQUENCE SET; Schema: public; Owner: freecodecamp
 --
 
-SELECT pg_catalog.setval('public.games_game_id_seq', 9, true);
+SELECT pg_catalog.setval('public.games_game_id_seq', 18, true);
 
 
 --
 -- Name: users_user_id_seq; Type: SEQUENCE SET; Schema: public; Owner: freecodecamp
 --
 
-SELECT pg_catalog.setval('public.users_user_id_seq', 7, true);
+SELECT pg_catalog.setval('public.users_user_id_seq', 47, true);
 
 
 --

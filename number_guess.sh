@@ -17,12 +17,14 @@ RETURNING_USER=$($PSQL "SELECT username FROM users WHERE username='$USERNAME'")
 if [[ -z $USER_ID ]]
   then
     INSERT_NEW_NAME=$($PSQL "INSERT INTO users(username) VALUES('$USERNAME')")
+    USER_ID=$($PSQL "SELECT user_id FROM users WHERE username='$USERNAME'")
     echo "Welcome, $USERNAME! It looks like this is your first time here."
 
 #ELSE, PROMPT THE WELCOME MESSAGE FOR OLD GAMERS, SEARCH TOTAL NUMBER OF GAMES AND FEWST NUMBER OF GUESSES 
 else
   GAMES_PLAYED=$($PSQL "SELECT COUNT(*) FROM games INNER JOIN users USING(user_id) WHERE user_id=$USER_ID")
   BEST_GAME=$($PSQL "SELECT MIN(guesses) FROM games INNER JOIN users USING(user_id) WHERE user_id =$USER_ID")
+  #NUMBER_OF_GUESSES=$($PSQL "SELECT MIN(guesses) FROM games INNER JOIN users USING(user_id)  WHERE user_id=$USER_ID")
   echo "Welcome back, $RETURNING_USER! You have played $GAMES_PLAYED games, and your best game took $BEST_GAME guesses."
 
 fi
@@ -75,7 +77,8 @@ done
 
 #PRINT THE CONGRATULATIONS MESSAGE
 #NUMBER_OF_GUESSES=$($PSQL "SELECT COUNT(guesses) FROM games INNER JOIN users USING(user_id)  WHERE user_id=$USER_ID")
-
+INSERTING_GUESSES=$($PSQL "INSERT INTO games(user_id, guesses) VALUES($USER_ID, $TRIES)")
 echo "You guessed it in $TRIES tries. The secret number was $RANDOM_NUMBER. Nice job!"
+
 
 #END OF WHILE
